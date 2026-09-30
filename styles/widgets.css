@@ -1,0 +1,260 @@
+.card {
+  background: linear-gradient(180deg, var(--panel), #0a0d13);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.1rem 1.15rem;
+  min-width: 0;
+}
+
+.widget__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-bottom: 0.85rem;
+}
+
+.widget__title {
+  margin: 0;
+  font-family: "Orbitron", sans-serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.widget__badge {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+}
+
+/* Персонаж */
+.character__name {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.character__roles {
+  margin: 0.2rem 0 0.6rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.character__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* Цитаты */
+.widget--quote[data-mood="sad"] .widget__title { color: #9aa7ff; }
+.widget--quote[data-mood="neutral"] .widget__title { color: var(--accent); }
+.widget--quote[data-mood="happy"] .widget__title { color: #b6ffcf; }
+
+.quote {
+  margin: 0;
+  padding: 0.8rem 0.9rem;
+  border-left: 3px solid var(--accent);
+  background: rgba(127, 212, 255, 0.04);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.quote__text {
+  margin: 0;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--text);
+}
+
+.quote__mood {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* Статы */
+.stats,
+.talents {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.stat__top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.stat__label { color: var(--text); }
+.stat__value { color: var(--muted); }
+
+.stat__bar {
+  height: 8px;
+  background: #151a23;
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.stat__fill {
+  display: block;
+  height: 100%;
+  width: var(--value);
+  background: linear-gradient(90deg, var(--accent), #4aa8ff);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Таланты */
+.talent {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 0.7rem;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.talent__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.talent__name { font-weight: 600; }
+.talent__level { color: var(--accent); white-space: nowrap; }
+
+.talent__desc {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+/* HP */
+.health {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.health__heart {
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--danger);
+  filter: drop-shadow(0 0 8px rgba(255, 107, 129, 0.5));
+  animation: heartbeat 1.4s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  15% { transform: scale(1.18); }
+  30% { transform: scale(1); }
+  45% { transform: scale(1.12); }
+}
+
+.health__info { flex: 1; min-width: 0; }
+
+.health__value {
+  margin: 0 0 0.25rem;
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.health__bar {
+  height: 10px;
+  background: #151a23;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.health__fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--danger), #ff9f6b);
+  transition: width 0.5s ease;
+}
+
+.health__state {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.health__refresh {
+  margin-top: 0.9rem;
+}
+
+/* Гифка */
+.gif {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.gif__img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 18px rgba(127, 212, 255, 0.15));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.gif__img--fallback {
+  animation: none;
+  opacity: 0.8;
+}
+
+/* Космос */
+.space__content {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.space__img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.space__title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.space__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.space__loading,
+.space__error {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.space__refresh {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+}

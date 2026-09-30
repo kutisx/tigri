@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Астральный дашборд Тигри — маленького тигрёнка, 3D-моделлера и гейм-дизайнера." />
+  <title>Тигри // Астральный дашборд</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/widgets.css" />
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="clouds" aria-hidden="true"><span></span><span></span><span></span></div>
+
+  <a class="skip-link" href="#dashboard">Перейти к дашборду</a>
+
+  <header class="topbar">
+    <div>
+      <h1 class="topbar__title">Тигри <span>// astral dashboard</span></h1>
+      <p class="topbar__subtitle">Уровень 99 · полигонов пройдено: бесконечность</p>
+    </div>
+    <nav id="toolbar" class="toolbar" aria-label="Управление виджетами"></nav>
+  </header>
+
+  <main id="dashboard" class="dashboard" aria-label="Виджеты дашборда"></main>
+
+  <p class="hint">
+    Управление с клавиатуры: <kbd>Tab</kbd> — переход между кнопками,
+    <kbd>Enter</kbd> / <kbd>Space</kbd> — нажать.
+  </p>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
